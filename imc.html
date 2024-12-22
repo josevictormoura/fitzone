@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700;900&family=Lemon&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/output.css">
+  <title>FitZone | IMC</title>
+</head>
+<body class="font-barlow">
+
+  <div class="bg-imc bg-no-repeat bg-cover bg-right-bottom">
+    <header class="max-w-4xl py-8 px-2 mx-auto">
+      <nav class="flex justify-between items-center w-full">
+        <div>
+          <a href="./" class="text-4xl font-black text-white">FitZone</a>
+        </div>
+        <ul  class="flex text-white gap-1">
+          <li><a href="./index.html"  class="p-2 text-lg font-bold">Home</a></li>
+          <li><a href="./treinos.html" class="p-2 text-lg font-bold">Treinos</a></li>
+          <li><a href="#" class="p-2 text-lg font-bold">IMC</a></li>
+        </ul>
+        <div class="hidden">
+          <img src="icons/menuMobile.png" alt="icon-menumobile" width="40" height="40">
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="max-w-4xl mt-5 pb-12 mx-auto px-2 text-white">
+        <h1 class="font-black text-[56px] -mb-4">Alimente seu corpo</h1>
+        <h2 class="font-black text-[32px] mb-2">nutra sua vida.</h2>
+        <P class="text-[13px] mt-3 leading-tight max-w-[500px]">Escolher alimentos saudáveis fortalece o corpo e melhora a qualidade de vida. Cada refeição é uma oportunidade de investir na sua saúde e bem-estar, proporcionando energia e vitalidade para o seu dia a dia.</P>
+        <div class="flex items-center mt-7">
+          <a class="button">Calcular imc</a>
+          <div class="flex gap-2">
+            <span class="font-lemo text-4xl">x</span>
+            <span class="font-lemo text-4xl">x</span>
+            <span class="font-lemo text-4xl">x</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <section>
+    <div class="max-w-4xl mx-auto grid gap-2 px-2 my-10">
+      <h2 class="font-black text-2xl">IMC</h2>
+      <p>IMC é a sigla para Índice de Massa Corpórea, parâmetro adotado pela Organização Mundial de Saúde para
+        calcular o peso ideal de cada pessoa.</p>
+      <p>O índice é calculado da seguinte maneira: divide-se o peso do paciente pela sua altura elevada ao quadrado.
+        Diz-se que o indivíduo tem peso normal quando o resultado do IMC está entre 18,5 e 24,9.</p>
+      <p>Quer descobrir seu IMC? Insira seu peso e sua altura nos campos abaixo e compare com os índices da tabela.
+        Importante: siga os exemplos e use pontos como separadores.</p>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-2">
+    <div class="flex flex-col gap-8 items-center justify-start bg-white my-12 w-[400px] rounded-lg shadow-sombra p-8">
+      <h2 class="font-black text-2xl">Calculadora IMC</h2>
+      <form class="w-full">
+        <div class="flex flex-col">
+          <label for="height" class="font-semibold text-lg mb-2">Altura</label>
+          <input type="text" id="height" class="border border-zinc-400 p-2 rounded-lg outline-none" placeholder="Digite a sua altura...">
+        </div>
+        <div class="flex flex-col">
+          <label for="weight" class="font-semibold text-lg my-2">Peso</label>
+          <input type="text" id="weight" class="border border-zinc-400 p-2 rounded-lg outline-none mb-4" placeholder="Digite o seu peso...">
+        </div>
+        <div class="flex items-center justify-center gap-8 mt-5">
+          <button type="button" class="py-2 px-5 bg-green-500 text-white rounded-xl font-semibold">Calcular</button>
+          <button type="button" class="py-2 px-5 bg-slate-600 text-white rounded-xl font-semibold">Limpar</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-2">
+    <div class="flex flex-col gap-3 items-center justify-start bg-white my-12 w-[400px] rounded-lg shadow-sombra p-8">
+      <h2 class="font-black text-2xl">Seu IMC: <span></span></h2>
+      <h2 class="font-semibold text-2xl">Situcao Atual: <span></span></h2>
+      <h3 class="font-semibold">Confira as classificacoes:</h3>
+      <div>
+        <div class="flex gap-2 *:flex-1">
+          <h4>IMC</h4>
+          <h4>Classificacao</h4>
+          <h4>Obesidade</h4>
+        </div>
+      </div>
+      <button type="button" class="py-2 px-5 text-white rounded-xl font-semibold bg-blue-500">Voltar</button>
+    </div>
+  </section>
+
+  <footer class="bg-slate-600">
+    <div class="max-w-4xl mx-auto py-10 px-2 flex gap-10">
+      <ul class="text-white font-semibold">
+        <li><h2 class="font-black text-4xl text-black mb-5">FitZone</h2></li>
+        <li class="flex items-center gap-2 mb-3"><img src="assets/icons/navegacao-gps.png" alt="icon-gps" class="w-12 h-12">Rivertown, Greenfield</li>
+        <li class="flex items-center gap-2 mb-3"><img src="assets/icons/telefone.png" alt="icon-telefone" class="w-12 h-12">(55) 123-4567</li>
+        <li class="flex items-center gap-2 mb-3"><img src="assets/icons/o-email (1).png" alt="icon-email" class="w-12 h-12">suporte@fitnessplus.com</li>
+      </ul>
+      <div class="flex flex-col items-center gap-3 text-white">
+        <h2 class="font-extrabold text-2xl">Contatos</h2>
+        <p class="text-center">Tem alguma dúvida ou quer saber mais sobre nossos serviços? Não hesite em entrar em contato. Nossa equipe está pronta para responder suas perguntas e ajudá-lo a encontrar o que você precisa para começar ou continuar sua jornada de fitness.
+          Conecte-se conosco para fazer parte da nossa comunidade fitness online e manter-se inspirado e informado.
+        </p>
+        <div class="flex gap-5">
+          <img src="assets/icons/facebook (4).png" alt="icon-facebook" class="w-12 h-12">
+          <img src="assets/icons/instagram (2).png" alt="icon-instagran" class="w-12 h-12">
+          <img src="assets/icons/whatsapp (2).png" alt="icon-linkedin" class="w-12 h-12">
+          <img src="assets/icons/youtube (3).png" alt="icon-whatsapp" class="w-12 h-12">
+          <img src="assets/icons/linkedin.png" alt="icon-youtube" class="w-12 h-12">
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
