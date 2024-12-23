@@ -9,6 +9,7 @@ module.exports = {
       },
       backgroundImage: {
         "home": "url(/assets/img/main.jpg)",
+        "imc": "url(/assets/img/imc-bg.jpg)",
         "azul-dark": "#172554",
         "azul": "#48cfff",
         "gradient": "linear-gradient(to right, #b5ecff, #48cfff)",
