@@ -10,41 +10,47 @@
   <title>Fitzone</title>
 </head>
 <body class="font-barlow">
-  
   <div class="bg-home bg-no-repeat bg-center">
-    <header class="max-w-4xl py-8 px-2 mx-auto">
-      <nav class="flex justify-between items-center w-full">
-        <div>
-          <a href="./" class="text-4xl font-black text-white">FitZone</a>
+    <header class="flex justify-between items-center max-w-4xl py-4 md:py-8 px-2 mx-auto">
+      <div>
+        <a href="./" class="text-3xl md:text-4xl font-black text-white">FitZone</a>
+      </div> 
+      <nav class="hidden items-center relative md:block z-40 max-md:fixed max-md:w-full max-md:inset-0" id="menu-mobile">
+        <div class="md:hidden fixed inset-0 bg-black/50 z-10 backdrop-blur-md">
+          <div class="relative flex items-center justify-between p-4">
+            <div>
+              <a href="./" class="text-3xl font-black text-white">FitZone</a>
+            </div> 
+            <ion-icon name="close-outline" id="close-menu-mobile" class="text-3xl hover:cursor-pointer text-white font-black p-1 hover:bg-black/50 hover:rounded-full"></ion-icon>
+          </div>
         </div>
-        <ul class="flex text-white gap-1">
-          <li><a href="#home" class="p-2 text-lg font-bold">Home</a></li>
-          <li><a href="./treinos.html" class="p-2 text-lg font-bold">Treinos</a></li>
-          <li><a href="/imc.html" class="p-2 text-lg font-bold">IMC</a></li>
+        <ul class="w-full text-white gap-1 md:flex max-md:z-50 max-md:absolute max-md:divide-y-2 max-md:divide-white/10 
+          max-md:p-8 max-md:w-full*:p-2 md:*:p-0 *:font-bold *:text-lg">
+          <li><a href="#home" class="p-4 md:py-0 block max-md:hover:bg-white/10 md:hover:underline md:hover:underline-offset-8">Home</a></li>
+          <li><a href="./treinos.html" class="p-4 md:py-0 block max-md:hover:bg-white/10 md:hover:underline md:hover:underline-offset-8">Treinos</a></li>
+          <li><a href="/imc.html" class="p-4 md:py-0 block max-md:hover:bg-white/10 md:hover:underline md:hover:underline-offset-8">IMC</a></li>
         </ul>
-        <div class="hidden">
-          <img src="assets/icons/menuMobile.png" alt="icon-menumobile" width="40" height="40">
-        </div>
       </nav>
+      <div class="block md:hidden self-start cursor-pointer p-2 hover:bg-black/50 rounded-full" id="button-mobile">
+        <img src="assets/icons/menuMobile.png" alt="icon-menumobile" width="40" height="40">
+      </div>
     </header>
-
     <main>
-      <section class="max-w-4xl mt-5 pb-12 mx-auto px-2 text-white">
-        <h1 class="font-black text-[56px] -mb-4">O único limite é você mesmo.</h1>
-        <h2 class="font-black text-[32px] mb-2">Supere seus próprios limites a cada dia</h2>
+      <section class="max-w-4xl md:mt-5 pb-12 mx-auto px-2 text-white">
+        <h1 class="font-black text-[32px] md:text-[56px]">O único limite é você mesmo.</h1>
+        <h2 class="font-black text-1xl md:text-[32px] mb-2">Supere seus próprios limites a cada dia</h2>
         <P class="text-[13px] mt-3 leading-tight max-w-[500px]">"A verdadeira transformação começa quando você decide que as desculpas não são mais uma opção. Cada treino é uma oportunidade para se superar, crescer e se tornar a melhor versão de si mesmo. Vamos juntos nessa jornada de força, determinação e conquista!"</P>
         <div class="flex items-center mt-7">
           <a href="./treinos.html" class="button">Treinos</a>
-          <div class="flex gap-2">
-            <span class="font-lemo text-4xl">x</span>
-            <span class="font-lemo text-4xl">x</span>
-            <span class="font-lemo text-4xl">x</span>
+          <div class="flex gap-2 *:font-lemo *:text-4xl">
+            <span>x</span>
+            <span>x</span>
+            <span>x</span>
           </div>
         </div>
       </section>
     </main>
   </div>
-
   <section>
     <div class="flex justify-center items-center flex-col my-12">
       <h2 class="font-black text-[28px] text-center">Saiba Mais</h2>
@@ -66,34 +72,35 @@
         <div class="benefit-icon">
           <img src="assets/icons/treino3.svg" alt="Exercícios que envolvem coordenação" width="20"/>
         </div>
-        <p class="benefit-text">Exercícios que envolvem coordenação aprimoram a habilidade do corpo de realizar movimentos complexos.</p>
+        <p class="benefit-text">Atividades de carga, como corrida e levantamento de peso, fortalecem os ossos e reduzem o risco de
+          osteoporose.</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon">
           <img src="assets/icons/treino4.svg" alt="Exercícios que envolvem coordenação" width="20"/>
         </div>
-        <p class="benefit-text">Exercícios que envolvem coordenação aprimoram a habilidade do corpo de realizar movimentos complexos.</p>
+        <p class="benefit-text">A prática de exercícios ajuda a desenvolver maior resiliência diante de desafios mentais.</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon">
           <img src="assets/icons/treino5.svg" alt="Exercícios que envolvem coordenação" width="20"/>
         </div>
-        <p class="benefit-text">Exercícios que envolvem coordenação aprimoram a habilidade do corpo de realizar movimentos complexos.</p>
+        <p class="benefit-text">A atividade física estimula a liberação de neurotransmissores associados à sensação de felicidade e
+          bem-estar.</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon">
           <img src="assets/icons/treino6.svg" alt="Exercícios que envolvem coordenação" width="20"/>
         </div>
-        <p class="benefit-text">Exercícios que envolvem coordenação aprimoram a habilidade do corpo de realizar movimentos complexos.</p>
+        <p class="benefit-text">O treinamento físico regular aumenta a resistência geral do corpo.</p>
       </div>
     </div>
   </section>
-  
   <section class="bg-slate-600 w-full text-white mt-20">
     <div class="flex flex-wrap max-w-4xl mx-auto px-2">
       <div class="flex flex-col items-center justify-center text-center grow-[2] shrink-[2] basis-[300px]">
-        <h1 class="text-4xl font-black mb-2 mt-14">Exercícios é importante</h1>
-        <h2 class="text-2xl font-black mb-2">"Nunca fica mais fácil, você apenas melhora"</h2>
+        <h1 class="text-3xl md:text-4xl font-black mb-2 mt-14">Exercícios é importante</h1>
+        <h2 class="text-balance md:text-2xl font-black mb-2">"Nunca fica mais fácil, você apenas melhora"</h2>
         <p class="mb-3">Os exercícios são fundamentais para manter uma vida saudável e equilibrada. Eles não apenas melhoram a condição física, mas também fortalecem a mente e elevam o espírito.</p>
         <a href="treinos.html" class="button mb-16">Treinos</a>
       </div>
@@ -102,7 +109,6 @@
       </div>
     </div>
   </section>
-
   <section>
     <div class="flex justify-center items-center flex-col mb-12 mt-20">
       <h2 class="font-black text-[28px] text-center">Benefícios</h2>
@@ -162,45 +168,43 @@
       </div>
     </div>
   </section>
-
   <section class="max-w-4xl mx-auto px-2 mb-16">
     <div class="flex justify-center items-center flex-col mb-12 mt-20">
       <h2 class="font-black text-3xl text-center">Perguntas Frequente</h2>
     </div>
     <dl>
-      <dt class="tittle-question">Qual é a importância do aquecimento antes do treino?</dt>
-      <dd class="result">O aquecimento é crucial antes do treino, pois aumenta a temperatura do corpo, melhora a flexibilidade muscular
+      <dt class="tittle-question active-rotate">Qual é a importância do aquecimento antes do treino?</dt>
+      <dd class="result block">O aquecimento é crucial antes do treino, pois aumenta a temperatura do corpo, melhora a flexibilidade muscular
         e prepara o sistema cardiovascular para a atividade física. Isso reduz o risco de lesões e melhora o desempenho
         durante o treino.</dd>
       <dt class="tittle-question">Quanto tempo devo esperar para comer antes de um treino?</dt>
-      <dd class="result">Recomenda-se comer uma refeição leve contendo carboidratos e proteínas cerca de 2 a 3 horas antes do treino.
+      <dd class="result hidden">Recomenda-se comer uma refeição leve contendo carboidratos e proteínas cerca de 2 a 3 horas antes do treino.
         Se não for possível, um lanche pequeno 30 a 60 minutos antes, como uma banana com uma colher de sopa de pasta de
         amendoim, pode fornecer energia sem causar desconforto.</dd>
       <dt class="tittle-question">Qual é a diferença entre treino de força e treino cardiovascular?</dt>
-      <dd class="result">O treino de força foca no desenvolvimento da massa muscular, força e resistência, geralmente usando pesos. O
+      <dd class="result hidden">O treino de força foca no desenvolvimento da massa muscular, força e resistência, geralmente usando pesos. O
         treino cardiovascular visa melhorar a saúde cardiovascular e queimar calorias, incluindo atividades como
         corrida, natação e ciclismo.</dd>
       <dt class="tittle-question">Como posso evitar lesões durante o treino de musculação?</dt>
-      <dd class="result">Para evitar lesões, é essencial utilizar a técnica correta ao realizar exercícios de musculação. Comece com
+      <dd class="result hidden">Para evitar lesões, é essencial utilizar a técnica correta ao realizar exercícios de musculação. Comece com
         cargas leves, aumentando gradualmente. Além disso, incluir aquecimento e alongamento, e permitir tempo adequado
         de recuperação entre os treinos, são práticas importantes.</dd>
       <dt class="tittle-question">Qual é a importância da hidratação durante o treino?</dt>
-      <dd class="result">A hidratação é vital durante o treino para manter o equilíbrio eletrolítico, regular a temperatura corporal e
+      <dd class="result hidden">A hidratação é vital durante o treino para manter o equilíbrio eletrolítico, regular a temperatura corporal e
         garantir um desempenho adequado. Beba água antes, durante e após o exercício, especialmente em ambientes quentes
         ou durante atividades intensas.</dd>
       <dt class="tittle-question">Como conciliar a prática de exercícios com uma agenda ocupada?</dt>
-      <dd class="result">É possível conciliar exercícios com uma agenda ocupada priorizando a eficiência. Opte por treinos curtos e
+      <dd class="result hidden">É possível conciliar exercícios com uma agenda ocupada priorizando a eficiência. Opte por treinos curtos e
         intensos, escolha atividades que você goste e agende o exercício como uma tarefa importante, assim como faria
         com qualquer compromisso profissional.</dd>
       <dt class="tittle-question">Qual é a importância do descanso na rotina de treinos?</dt>
-      <dd class="result">O descanso é crucial para permitir a recuperação muscular, prevenir lesões e evitar a fadiga excessiva.
+      <dd class="result hidden">O descanso é crucial para permitir a recuperação muscular, prevenir lesões e evitar a fadiga excessiva.
         Programar dias de descanso na semana e incluir períodos de sono adequados são fundamentais para maximizar os
         benefícios do treino. Espero que essas perguntas e respostas sejam úteis para o seu treino e</dd>
     </dl>
   </section>
-
   <footer class="bg-slate-600">
-    <div class="max-w-4xl mx-auto py-10 px-2 flex gap-10">
+    <div class="max-w-4xl mx-auto py-10 px-2 flex max-[600px]:flex-col gap-10">
       <ul class="text-white font-semibold">
         <li><h2 class="font-black text-4xl  text-black mb-5">FitZone</h2></li>
         <li class="flex items-center gap-2 mb-3"><img src="assets/icons/navegacao-gps.png" alt="icon-gps" class="w-12 h-12">Rivertown, Greenfield</li>
@@ -212,7 +216,7 @@
         <p class="text-center">Tem alguma dúvida ou quer saber mais sobre nossos serviços? Não hesite em entrar em contato. Nossa equipe está pronta para responder suas perguntas e ajudá-lo a encontrar o que você precisa para começar ou continuar sua jornada de fitness.
           Conecte-se conosco para fazer parte da nossa comunidade fitness online e manter-se inspirado e informado.
         </p>
-        <div class="flex gap-5">
+        <div class="flex gap-5 *:cursor-pointer">
           <img src="assets/icons/facebook (4).png" alt="icon-facebook" class="w-12 h-12">
           <img src="assets/icons/instagram (2).png" alt="icon-instagran" class="w-12 h-12">
           <img src="assets/icons/whatsapp (2).png" alt="icon-linkedin" class="w-12 h-12">
@@ -222,6 +226,9 @@
       </div>
     </div>
   </footer>
-
+  <script src="js/faq.js"></script>
+  <script src="js/menu-mobile.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
