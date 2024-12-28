@@ -10,30 +10,38 @@
   <title>FitZone | IMC</title>
 </head>
 <body class="font-barlow">
-
-  <div class="bg-imc bg-no-repeat bg-cover bg-right-bottom">
-    <header class="max-w-4xl py-8 px-2 mx-auto">
-      <nav class="flex justify-between items-center w-full">
-        <div>
-          <a href="./" class="text-4xl font-black text-white">FitZone</a>
+  <div class="bg-imc bg-no-repeat bg-cover bg-center-center md:bg-right-bottom">
+    <header class="flex justify-between items-center max-w-4xl p-4 md:py-8 px-2 mx-auto">
+      <div>
+        <a href="./" class="text-3xl md:text-4xl font-black text-white">FitZone</a>
+      </div>
+      <nav class="hidden relative items-center z-40 md:block max-md:fixed max-md:inset-0 max-md:w-full" id="menu-mobile">
+        <div class="md:hidden fixed inset-0 bg-black/50 z-10 backdrop-blur-md">
+          <div class="flex items-center justify-between p-4">
+            <div>
+              <a href="./" class="text-3xl font-black text-white">FitZone</a>
+            </div>
+            <ion-icon name="close-outline" id="close-menu-mobile" class="text-3xl hover:cursor-pointer text-white font-black p-1 hover:bg-black/50 hover:rounded-full"></ion-icon>
+          </div>
         </div>
-        <ul  class="flex text-white gap-1">
-          <li><a href="./index.html"  class="p-2 text-lg font-bold">Home</a></li>
-          <li><a href="./treinos.html" class="p-2 text-lg font-bold">Treinos</a></li>
-          <li><a href="#" class="p-2 text-lg font-bold">IMC</a></li>
+        <ul class="flex text-white gap-1 max-md:relative z-50 max-md:flex-col w-full max-md:divide-y-2
+          max-md:divide-white/10 max-md:p-8 *:p-2 md:*:p-0 *:font-bold *:text-lg">
+          <li><a href="./index.html"  class="p-4 block md:hover:underline max-md:hover:bg-white/10 md:hover:underline-offset-8">Home</a></li>
+          <li><a href="./treinos.html" class="p-4 block md:hover:underline max-md:hover:bg-white/10 md:hover:underline-offset-8">Treinos</a></li>
+          <li><a href="#IMC" class="p-4 block md:hover:underline max-md:hover:bg-white/10 md:hover:underline-offset-8">IMC</a></li>
         </ul>
-        <div class="hidden">
-          <img src="icons/menuMobile.png" alt="icon-menumobile" width="40" height="40">
-        </div>
       </nav>
+      <div class="md:hidden cursor-pointer p-2 hover:bg-black/50 rounded-full">
+        <img src="assets/icons/menuMobile.png" alt="icon-menumobile" width="40" height="40" id="button-mobile">
+      </div>
     </header>
     <main>
       <section class="max-w-4xl mt-5 pb-12 mx-auto px-2 text-white">
-        <h1 class="font-black text-[56px] -mb-4">Alimente seu corpo</h1>
-        <h2 class="font-black text-[32px] mb-2">nutra sua vida.</h2>
-        <P class="text-[13px] mt-3 leading-tight max-w-[500px]">Escolher alimentos saudáveis fortalece o corpo e melhora a qualidade de vida. Cada refeição é uma oportunidade de investir na sua saúde e bem-estar, proporcionando energia e vitalidade para o seu dia a dia.</P>
+        <h1 class="font-black text-[32px] md:text-[56px]">Alimente seu corpo.</h1>
+        <h2 class="font-black md:text-[32px] mb-2">nutra sua vida</h2>
+        <P class="text-[16px] mt-3 leading-tight">Escolher alimentos saudáveis fortalece o corpo e melhora a qualidade de vida. Cada refeição é uma oportunidade de investir na sua saúde e bem-estar, proporcionando energia e vitalidade para o seu dia a dia.</P>
         <div class="flex items-center mt-7">
-          <a class="button">Calcular imc</a>
+          <a href="#section-imc" class="button" id="btn-to-calcimc">Calcular imc</a>
           <div class="flex gap-2">
             <span class="font-lemo text-4xl">x</span>
             <span class="font-lemo text-4xl">x</span>
@@ -43,7 +51,6 @@
       </section>
     </main>
   </div>
-
   <section>
     <div class="max-w-4xl mx-auto grid gap-2 px-2 my-10">
       <h2 class="font-black text-2xl">IMC</h2>
@@ -55,9 +62,8 @@
         Importante: siga os exemplos e use pontos como separadores.</p>
     </div>
   </section>
-
-  <section class="max-w-4xl mx-auto px-2">
-    <div class="flex flex-col gap-8 items-center justify-start bg-white my-12 w-[400px] rounded-lg shadow-sombra p-8">
+  <section class="flex justify-cente items-center flex-col max-w-4xl mx-auto px-2" id="section-imc">
+    <div class="flex flex-col gap-8 items-center bg-white my-12 w-full max-w-[400px] rounded-lg shadow-sombra p-8">
       <h2 class="font-black text-2xl">Calculadora IMC</h2>
       <form class="w-full">
         <div class="flex flex-col">
@@ -74,10 +80,7 @@
         </div>
       </form>
     </div>
-  </section>
-
-  <section class="max-w-4xl mx-auto px-2">
-    <div class="flex flex-col gap-3 items-center justify-start bg-white my-12 w-[400px] rounded-lg shadow-sombra p-8">
+    <div class="flex flex-col gap-3 items-center justify-start bg-white my-12 w-full max-w-[400px] rounded-lg shadow-sombra p-8">
       <h2 class="font-black text-2xl">Seu IMC: <span></span></h2>
       <h2 class="font-semibold text-2xl">Situcao Atual: <span></span></h2>
       <h3 class="font-semibold">Confira as classificacoes:</h3>
@@ -91,9 +94,8 @@
       <button type="button" class="py-2 px-5 text-white rounded-xl font-semibold bg-blue-500">Voltar</button>
     </div>
   </section>
-
   <footer class="bg-slate-600">
-    <div class="max-w-4xl mx-auto py-10 px-2 flex gap-10">
+    <div class="max-w-4xl mx-auto py-10 px-2 flex gap-10 max-[600px]:flex-col">
       <ul class="text-white font-semibold">
         <li><h2 class="font-black text-4xl text-black mb-5">FitZone</h2></li>
         <li class="flex items-center gap-2 mb-3"><img src="assets/icons/navegacao-gps.png" alt="icon-gps" class="w-12 h-12">Rivertown, Greenfield</li>
@@ -102,10 +104,10 @@
       </ul>
       <div class="flex flex-col items-center gap-3 text-white">
         <h2 class="font-extrabold text-2xl">Contatos</h2>
-        <p class="text-center">Tem alguma dúvida ou quer saber mais sobre nossos serviços? Não hesite em entrar em contato. Nossa equipe está pronta para responder suas perguntas e ajudá-lo a encontrar o que você precisa para começar ou continuar sua jornada de fitness.
+        <p class="text-justify md:text-center">Tem alguma dúvida ou quer saber mais sobre nossos serviços? Não hesite em entrar em contato. Nossa equipe está pronta para responder suas perguntas e ajudá-lo a encontrar o que você precisa para começar ou continuar sua jornada de fitness.
           Conecte-se conosco para fazer parte da nossa comunidade fitness online e manter-se inspirado e informado.
         </p>
-        <div class="flex gap-5">
+        <div class="flex gap-5 *:cursor-pointer">
           <img src="assets/icons/facebook (4).png" alt="icon-facebook" class="w-12 h-12">
           <img src="assets/icons/instagram (2).png" alt="icon-instagran" class="w-12 h-12">
           <img src="assets/icons/whatsapp (2).png" alt="icon-linkedin" class="w-12 h-12">
@@ -115,5 +117,22 @@
       </div>
     </div>
   </footer>
+  <script>
+    const btnScrollImc = document.querySelector('#btn-to-calcimc')
+
+    function scrollToImc() {
+      event.preventDefault()
+      const sectionImc = document.querySelector('#section-imc')
+      sectionImc.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+
+    btnScrollImc.addEventListener('click', scrollToImc)
+  </script>
+  <script src="js/menu-mobile.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
