@@ -1,0 +1,46 @@
+{
+  "imc":[
+    {
+      "min": 0,
+      "max": 18.5,
+      "info": "Abaixo do Peso",
+      "classication": "Menor que 18,5",
+      "obesity": "0"
+    },
+    {
+      "min": 18.5,
+      "max": 24.5,
+      "info": "Peso Ideal",
+      "classication": "Entre 18,5 a 24.5",
+      "obesity": "0"
+    },
+    {
+      "min": 25,
+      "max": 29.9,
+      "info": "Levemente Acima do Peso",
+      "classication": "Entre 25 a 29,9",
+      "obesity": "0"
+    },
+    {
+      "min": 30,
+      "max": 34.9,
+      "info": "Obesidade",
+      "classication": "Entre 30 a 34.9",
+      "obesity": "I"
+    },
+    {
+      "min": 35,
+      "max": 39.9,
+      "info": "Obesidade (severa)",
+      "classication": "Entre 35 a 39,9",
+      "obesity": "II"
+    },
+    {
+      "min": 40,
+      "max": 100,
+      "info": "Obesidade (mórbida)",
+      "classication": "Acima de 40",
+      "obesity": "III"
+    }
+  ]
+}
