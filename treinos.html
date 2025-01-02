@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700;900&family=Lemon&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/output.css">
+  <title>FitZone | Treinos</title>
+</head>
+<body class="font-barlow">
+  
+  <div class="bg-[url(/assets/img/treino-bg.jpg)] bg-cover">
+    <header class="flex items-center justify-between max-w-4xl py-4 md:py-8 px-2 mx-auto">
+      <div>
+        <a href="./" class="text-3xl md:text-4xl font-black text-white">FitZone</a>
+      </div>
+      <nav class="relative hidden items-center md:block z-40 max-md:inset-0 max-md:fixed max-md:w-full" id="menu-mobile">
+        <div class="md:hidden fixed inset-0 bg-black/50 backdrop-blur-md z-10">
+          <div class="flex items-center justify-between p-4">
+            <div>
+              <a href="./" class="text-3xl font-black text-white">FitZone</a>
+            </div>
+            <ion-icon name="close-outline" id="close-menu-mobile" class="text-3xl hover:cursor-pointer text-white font-black p-1 hover:bg-black/50 hover:rounded-full"></ion-icon>
+          </div>
+        </div>
+        <ul class="flex max-md:flex-col text-white gap-1 text-lg font-bold z-50 max-md:p-8 max-md:divide-y-2
+          max-md:w-full max-md:divide-white/10 md:*:p-0 *:p-2 *:font-bold *:text-xl">
+          <li><a href="./index.html" class="p-4 block md:hover:underline md:underline-offset-8 max-md:hover:bg-white/10">Home</a></li>
+          <li><a href="./treinos.html" class="p-4 block md:hover:underline md:underline-offset-8 max-md:hover:bg-white/10">Treinos</a></li>
+          <li><a href="./" class="p-4 block md:hover:underline md:underline-offset-8 max-md:hover:bg-white/10">IMC</a></li>
+        </ul>
+      </nav>
+      <div class="md:hidden cursor-pointer p-2 hover:bg-black/50 rounded-full">
+        <img src="assets/icons/menuMobile.png" alt="icon-menumobile" width="40" height="40" id="button-mobile">
+      </div>
+    </header>
+    <main>
+      <section class="max-w-4xl mt-5 pb-12 mx-auto px-2 text-white">
+        <h1 class="font-black text-[32px] md:text-[56px] md:-mb-4">Desafie-se.</h1>
+        <h2 class="font-black md:text-[32px] mb-2">Você é mais forte do que pensa</h2>
+        <p class="text-[16px] mt-3 leading-tight">Cada treino é uma oportunidade de descobrir sua verdadeira força. Não subestime suas capacidades. Vá além dos seus limites e surpreenda-se com o que você pode alcançar. Acredite em si mesmo e veja sua força crescer, tanto física quanto mentalmente.</p>
+        <div class="flex items-center mt-7">
+          <button id="btn-create-table" class="button">CRIAR NOVO TREINO</button>
+          <div class="flex gap-2 *:font-lemo *:text-4xl">
+            <span>x</span>
+            <span>x</span>
+            <span>x</span>
+          </div>
+        </div>
+    </main>
+  </div>
+
+  <h2 class="my-10 text-center text-4xl font-black uppercase">Treinos Diários</h2>
+
+  <!-- add treinos js -->
+  <section class="container-tables flex flex-col gap-14 max-w-fit mx-auto pb-32"></section>
+
+  <!-- modal create table -->
+  <div class="hidden justify-center items-center fixed inset-0 bg-black/80" id="modal-create-table">
+    <div class="fixed flex flex-col bg-white p-8 rounded-lg  w-full max-w-[320px]">
+      <span class="mb-5 text-2xl block">Nova Tabela</span>
+      <ion-icon id="close-modal" name="close-outline" class="absolute top-5 right-5 text-2xl rounded-[50%] p-[2px] cursor-pointer 
+      hover:bg-red-600 hover:text-white hover:transition-all"></ion-icon>
+      <div class="flex flex-col gap-1">
+        <label class="text-sm font-bold" for="day-semana">Treino dia da semana</label>
+        <input type="text" id="day" placeholder="dia semana" class="border border-zinc-400 p-[5px] rounded-lg outline-none" required>
+      </div>
+      <button type="button" class="button mt-5 mx-auto text-sm" id="btn-save-table">Salvar</button>
+    </div>
+  </div>
+
+  <!-- modal create treino-->
+  <div class="hidden items-center justify-center fixed bg-black/80 inset-0">
+    <form id="form-treino" class="relative flex flex-col p-5 rounded-lg gap-2 mx-2 bg-white w-full max-w-[400px]">
+      <ion-icon id="close-modal-row" name="close-outline" class="absolute top-5 right-5 text-2xl rounded-[50%] p-[2px] cursor-pointer 
+      hover:bg-red-600 hover:text-white hover:transition-all"></ion-icon>
+      <h2 class="text-2xl font-semibold">Crie um treino</h2>
+        <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+          <div>
+            <label for="musculo" class="font-semibold text-sm block mb-1">Nome músculo</label>
+            <input type="text" id="musculo" placeholder="nome muscular" class="border border-zinc-400 p-[5px] rounded-lg outline-none w-full" required>
+          </div>
+          <div>
+            <label for="exercicio" class="font-semibold text-sm block mb-1">Nome exercício</label>
+            <input type="text" id="exercicio" placeholder="nome exercício" class="border border-zinc-400 p-[5px] rounded-lg outline-none w-full" required>
+          </div>
+          <h5 class="font-semibold text-md max-md:my-1 md:col-span-2">Série</h5>
+          <div>
+            <label for="kg" class="block font-semibold text-sm mb-1">Kg</label>
+            <input type="text" id="kg" placeholder="kg" class="border border-zinc-400 p-[5px] rounded-lg outline-none w-full" required>
+          </div>
+          <div>
+            <label for="repeticoes" class="font-semibold text-sm block mb-1">Repetições</label>
+            <input type="text" id="repeticoes" placeholder="repetições" class="border border-zinc-400 p-[5px] rounded-lg outline-none w-full" required>
+          </div>
+          <div class="md:col-span-2">
+            <label for="descanso" class="font-semibold text-sm block mb-1">Descanso</label>
+            <input type="text" id="descanso" placeholder="descanso" class="border border-zinc-400 p-[5px] rounded-lg outline-none w-full" required>
+          </div>
+          <button type="submit" class="md:col-span-2 mx-auto max-md:text-sm button mt-3">Salvar</button>
+        </div>
+    </form>
+  </div>
+
+  <!-- modal confirm delete -->
+  <div class="hidden items-center justify-center fixed bg-black/80 inset-0">
+    <div class="flex flex-col items-start bg-white p-5 rounded-lg w-[300px]">
+      <h5 class="font-bold text-lg">Excluir exercício?</h5>
+      <p>Isso excluirá o exercício: <span></span></p>
+      <div class="flex gap-4 justify-center w-full mt-4">
+        <button type="button" id="cancel" class="py-1 px-3 bg-gray-700 text-white rounded-xl font-semibold" >Cancelar</button>
+        <button type="button" id="delete" class="py-1 px-3 bg-red-500 text-white rounded-xl font-semibold" >Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-slate-600">
+    <div class="max-w-4xl mx-auto py-10 px-2 gap-10">
+      <ul class="text-white font-semibold">
+        <li><h2 class="font-black text-4xl text-black mb-5">FitZone</h2></li>
+        <li class="flex items-center gap-2 mb-3"><img src="assets/icons/navegacao-gps.png" alt="icon-gps" class="w-12 h-12">Rivertown, Greenfield</li>
+        <li class="flex items-center gap-2 mb-3"><img src="assets/icons/telefone.png" alt="icon-telefone" class="w-12 h-12">(55) 123-4567</li>
+        <li class="flex items-center gap-2 mb-3"><img src="assets/icons/o-email (1).png" alt="icon-email" class="w-12 h-12">suporte@fitnessplus.com</li>
+      </ul>
+      <div class="flex flex-col items-center gap-3 text-white">
+        <h2 class="font-extrabold text-2xl">Contatos</h2>
+        <p class="text-justify md:text-center">Tem alguma dúvida ou quer saber mais sobre nossos serviços? Não hesite em entrar em contato. Nossa equipe está pronta para responder suas perguntas e ajudá-lo a encontrar o que você precisa para começar ou continuar sua jornada de fitness.
+          Conecte-se conosco para fazer parte da nossa comunidade fitness online e manter-se inspirado e informado.
+        </p>
+        <div class="flex gap-5 *:cursor-pointer">
+          <img src="assets/icons/facebook (4).png" alt="icon-facebook" class="size-12">
+          <img src="assets/icons/instagram (2).png" alt="icon-instagran" class="size-12">
+          <img src="assets/icons/whatsapp (2).png" alt="icon-linkedin" class="size-12">
+          <img src="assets/icons/youtube (3).png" alt="icon-whatsapp" class="size-12">
+          <img src="assets/icons/linkedin.png" alt="icon-youtube" class="size-12">
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- icones -->
+   <script src="js/treinos.js"></script>
+   <script src="js/menu-mobile.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
