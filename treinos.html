@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700;900&family=Lemon&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/output.css">
   <title>FitZone | Treinos</title>
@@ -72,7 +73,7 @@
   </div>
 
   <!-- modal create treino-->
-  <div class="hidden items-center justify-center fixed bg-black/80 inset-0">
+  <div class="hidden items-center justify-center fixed bg-black/80 inset-0" id="modal-create-treino">
     <form id="form-treino" class="relative flex flex-col p-5 rounded-lg gap-2 mx-2 bg-white w-full max-w-[400px]">
       <ion-icon id="close-modal-row" name="close-outline" class="absolute top-5 right-5 text-2xl rounded-[50%] p-[2px] cursor-pointer 
       hover:bg-red-600 hover:text-white hover:transition-all"></ion-icon>
@@ -80,24 +81,24 @@
         <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
           <div>
             <label for="musculo" class="font-semibold text-sm block mb-1">Nome músculo</label>
-            <input type="text" id="musculo" placeholder="nome muscular" class="border border-zinc-400 p-[5px] rounded-lg outline-none w-full" required>
+            <input type="text" id="musculo" placeholder="nome muscular" class="border border-zinc-400 p-[5px] rounded-lg outline-blue-300 w-full" required>
           </div>
           <div>
             <label for="exercicio" class="font-semibold text-sm block mb-1">Nome exercício</label>
-            <input type="text" id="exercicio" placeholder="nome exercício" class="border border-zinc-400 p-[5px] rounded-lg outline-none w-full" required>
+            <input type="text" id="exercicio" placeholder="nome exercício" class="border border-zinc-400 p-[5px] rounded-lg outline-blue-300 w-full" required>
           </div>
           <h5 class="font-semibold text-md max-md:my-1 md:col-span-2">Série</h5>
           <div>
             <label for="kg" class="block font-semibold text-sm mb-1">Kg</label>
-            <input type="text" id="kg" placeholder="kg" class="border border-zinc-400 p-[5px] rounded-lg outline-none w-full" required>
+            <input type="text" id="kg" placeholder="kg" class="border border-zinc-400 p-[5px] rounded-lg outline-blue-300 w-full" required>
           </div>
           <div>
             <label for="repeticoes" class="font-semibold text-sm block mb-1">Repetições</label>
-            <input type="text" id="repeticoes" placeholder="repetições" class="border border-zinc-400 p-[5px] rounded-lg outline-none w-full" required>
+            <input type="text" id="repeticoes" placeholder="repetições" class="border border-zinc-400 p-[5px] rounded-lg outline-blue-300 w-full" required>
           </div>
           <div class="md:col-span-2">
             <label for="descanso" class="font-semibold text-sm block mb-1">Descanso</label>
-            <input type="text" id="descanso" placeholder="descanso" class="border border-zinc-400 p-[5px] rounded-lg outline-none w-full" required>
+            <input type="text" id="descanso" placeholder="descanso" class="border border-zinc-400 p-[5px] rounded-lg outline-blue-300 w-full" required>
           </div>
           <button type="submit" class="md:col-span-2 mx-auto max-md:text-sm button mt-3">Salvar</button>
         </div>
@@ -105,7 +106,7 @@
   </div>
 
   <!-- modal confirm delete -->
-  <div class="hidden items-center justify-center fixed bg-black/80 inset-0">
+  <div class="hidden items-center justify-center fixed bg-black/80 inset-0" id="modal-confirm-delete">
     <div class="flex flex-col items-start bg-white p-5 rounded-lg w-[300px]">
       <h5 class="font-bold text-lg">Excluir exercício?</h5>
       <p>Isso excluirá o exercício: <span></span></p>
@@ -139,6 +140,8 @@
       </div>
     </div>
   </footer>
+
+ 
   <!-- icones -->
    <script src="js/treinos.js"></script>
    <script src="js/menu-mobile.js"></script>
