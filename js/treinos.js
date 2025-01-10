@@ -2,6 +2,7 @@ const btnCreateTable = document.querySelector('#btn-create-table')
 const btnCloseModalCreateTable = document.querySelector('#close-modal')
 const modalCreateTable = document.querySelector('#modal-create-table')
 const modalCreateTreino = document.querySelector('#modal-create-treino')
+const modalConfirmDelete = document.querySelector('#modal-confirm-delete')
 const btnSaveTable = document.querySelector('#btn-save-table')
 const dayWeek = document.querySelector('#day')
 const containerTables = document.querySelector('.container-tables')
@@ -21,6 +22,20 @@ function createTreino(table) {
     bdTreinos.push(table)
     setLocalStorage(bdTreinos)
     console.log('Tabela de Treino Criada', table)
+}
+
+function updateTreino(index, newTable) {
+    const bdTreinos = getLocalStorage()
+    bdTreinos[index] = newTable
+    setLocalStorage(bdTreinos)
+    console.log("Tabela atualizada no indeice: ", index);
+}
+
+function deleteTreino(index) {
+    const bdTreinos = getLocalStorage()
+    bdTreinos.splice(index, 1)
+    setLocalStorage(bdTreinos)
+    console.log("Tabela excluida no indece:", index);
 }
 
 function createElementTable(table, index){
@@ -66,6 +81,7 @@ function updateScreenUer() {
             createElementRow(rowTable, index)
         })
     });
+    checkListTableNull()
 }
 
 updateScreenUer()
@@ -110,10 +126,77 @@ function createElementRow(treino, indexTable) {
         </td>
     `;
     tableBody.appendChild(tr);
+
+    const treinoIndex = tableBody.children.length -1
+
+    const deleteIcon = tr.querySelector('.delete-icon')
+    deleteIcon.onclick = null
+    deleteIcon.addEventListener('click', () => handleDelete(indexTable, treinoIndex))
+
+    const editIcon = tr.querySelector('.edit-icon')
+    editIcon.onclick = null
+    editIcon.addEventListener('click', handleEdit(indexTable, treinoIndex))
+}
+
+function handleEdit(indexTable, treinoIndex) {
+    return () => editTreino(indexTable, treinoIndex)
+}
+
+function editTreino(index, treinoIndex) {
+    const bdTables = getLocalStorage();
+    const treino = bdTables[index].treinos[treinoIndex];
+
+    // Preencher campos do formulário com os dados do treino
+    inputMusculo.value = treino.musculo;
+    inputExercicio.value = treino.exercicio;
+    inputRepeticoes.value = treino.repeticoes;
+    inputKg.value = treino.kg;
+    inputDescanso.value = treino.descanso;
+
+    showModalCreateTreino();
+
+    const form = document.querySelector('#form-treino');
+    form.onsubmit = event => {
+        event.preventDefault();
+
+        // Atualizar o treino no banco de dados
+        bdTables[index].treinos[treinoIndex] = {
+            musculo: inputMusculo.value,
+            exercicio: inputExercicio.value,
+            repeticoes: inputRepeticoes.value,
+            kg: inputKg.value,
+            descanso: inputDescanso.value,
+        };
+
+        setLocalStorage(bdTables);
+        updateScreenUer();
+        closeModalCreateTreino();
+    };
+}
+
+
+function handleDelete(indexTable, treinoIndex) {
+    showModalConfirmDelete()
+
+    modalConfirmDelete.onclick = null
+    modalConfirmDelete.addEventListener('click', event =>{
+        if (event.target.id === "delete") {
+            const bdTables = getLocalStorage();
+            const table = bdTables[indexTable];
+            table.treinos.splice(treinoIndex, 1);
+            setLocalStorage(bdTables)
+            updateScreenUer()
+            closeModalConfirmDelete()
+        }
+
+        if (event.target.id === 'cancel') {
+            closeModalConfirmDelete()
+        }
+    })
 }
 
 function addRowTable(index) {
-    showCloseModalCreateTreino();
+    showModalCreateTreino();
     const form = document.querySelector('#form-treino');
     form.onsubmit = event => {
         event.preventDefault();
@@ -142,7 +225,7 @@ function saveTreinoRow(index) {
 
         updateScreenUer();
         clearFildsForm();
-        showCloseModalCreateTreino();
+        closeModalCreateTreino();
     }
 }
 
@@ -154,17 +237,58 @@ function clearFildsForm() {
     inputDescanso.value = ''; 
 }
 
+function checkListTableNull() {
+
+    const contentAlert = document.createElement('div')
+    contentAlert.classList.add("flex", "items-center", "justify-center", "max-w-4xl", 
+    "mx-auto", "gap-[10px]", "bg-slate-500", "p-[30px]", 
+    "mt-5", "rounded-md"
+    )
+    
+    const ionIcon = document.createElement('ion-icon')
+    ionIcon.setAttribute('name', 'alert-circle-outline')
+    ionIcon.classList.add("text-white", "py-[2px]", "px-[5px]", "rounded-full", "text-4xl")
+    
+    const span = document.createElement('span')
+    span.classList.add("text-white","text-2xl")
+
+    const checkListNull = containerTables.children.length === 0
+
+    if (checkListNull) {
+        span.innerHTML = 'Nenhuma Treino no momento, clique em criar novo treino!'
+        containerTables.appendChild(contentAlert)
+    }
+    
+    contentAlert.appendChild(ionIcon)
+    contentAlert.appendChild(span)
+}
+
+const closeModalConfirmDelete = () =>{
+    modalConfirmDelete.classList.add('hidden')
+    modalConfirmDelete.classList.remove('flex')
+}
+
+const showModalConfirmDelete = () =>{
+    modalConfirmDelete.classList.remove('hidden')
+    modalConfirmDelete.classList.add('flex')
+}
+
 const showCloseModalCreateTable = () => {
     modalCreateTable.classList.toggle('hidden')
     modalCreateTable.classList.toggle('flex')
 }
 
-const showCloseModalCreateTreino = () =>{
-    modalCreateTreino.classList.toggle('hidden')
-    modalCreateTreino.classList.toggle('flex')
+const showModalCreateTreino = () =>{
+    modalCreateTreino.classList.remove('hidden')
+    modalCreateTreino.classList.add('flex')
+}
+
+const closeModalCreateTreino = () =>{
+    modalCreateTreino.classList.add('hidden')
+    modalCreateTreino.classList.remove('flex')
 }
 
 btnCreateTable.addEventListener('click', showCloseModalCreateTable)
 btnCloseModalCreateTable.addEventListener('click', showCloseModalCreateTable)
-btnCloseModalCreateTreino.addEventListener('click', showCloseModalCreateTreino)
+btnCloseModalCreateTreino.addEventListener('click', closeModalCreateTreino)
 btnSaveTable.addEventListener('click', initCreateTable)
