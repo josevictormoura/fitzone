@@ -1,6 +1,6 @@
 ![logo do projeto](https://imgur.com/AaMRY3V.png)
 
-#FitZone
+# FitZone
 
 FitZone é um site interativo focado em promover o bem-estar físico e mental por meio de conteúdos sobre exercícios físicos, benefícios para o corpo e a mente, além de ferramentas úteis, como o cálculo de IMC e dicas de treinos personalizados.
 
