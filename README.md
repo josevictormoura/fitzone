@@ -37,7 +37,7 @@ O site utiliza Google Fonts (Barlow e Lemon) para um visual moderno e amigável.
 ## 📲 Como Executar o Projeto
 1. Clone o repositório para a sua máquina local:
 ```bash
-git clone git clone https://github.com/seu-usuario/fitzone.git
+git clone git clone https://github.com/josevictormoura/fitzone.git
 ```
 2. Navegue até o diretório do projeto:
 ```bash
